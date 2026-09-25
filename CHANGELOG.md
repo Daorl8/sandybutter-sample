@@ -1,5 +1,16 @@
 # CHANGELOG — Sandy Butter (샌디버터)
 
+## v0.2 — 2026-09-25 (모찌 라인 전환)
+- **문구**: 버튼 "오븐 주문하기"→"택배 주문하기". 태그라인 "에그타르트·과일샌드·두바이 김밥"→"과일모찌·초코모찌·요거트모찌". meta description·JSON-LD description·og:image도 모찌로 일관화(og→sb-mochi-fruit).
+- **쇼케이스 사진 → 모찌 3컷**: sb-mochi-fruit(딸기 과일모찌)·sb-mochi-choco(초코모찌)·sb-mochi-muscat(샤인머스캣 과일모찌). #10 과일모찌 원본의 "Shine Muscat/Strawberry" 텍스트는 컵별 크롭으로 제거. #18 초코모찌.
+- ⚠️**요거트모찌 실물 사진은 폴더에 없음** → 쇼케이스는 과일모찌(딸기·머스캣)+초코모찌로 구성. 요거트모찌 사진 확보 시 교체.
+- 기존 sb-eggtart·fruitsand·cake.webp는 미참조 orphan.
+- QA: 자산 무결성·태그균형·이모지0·alt5/5 통과.
+
+## v0.1.1 — 2026-09-25 (리뷰 반영)
+- **Pretendard CDN 무버전화**: `pretendard@v1.3.9` → `pretendard`(버전 제거). CF 이메일 난독화 함정 회피 + 타 샘플(saru·hausment)과 일관. (시안 CDN, 납품 시 self-host라 최신핀 무해)
+- JSON-LD 관련 주석 명확화(JSON-LD는 이미 포함=Organization, 보류는 canonical·og:url·절대 og:image뿐).
+
 ## v0.1 — 2026-09-25 (최초 시안)
 - **유형**: 링크 허브(링크인바이오) — 고객 요청 "링크로만". 오븐 버터 디저트 온라인 주문 브랜드(에그타르트·과일샌드·두바이 김밥·딸기 케이크).
 - **이미지 큐레이션**: IG 원본 47장에서 로고 2종(캐릭터 워드마크 #0, 주황 원형 배지 #44) + 사장님 실제 제품 사진 3컷(에그타르트·과일샌드·딸기케이크) 선별. 리포스트(MOSSHOUR)·그래픽·텍스트오버레이·재료샷 제외. webp 변환·`sb-` slug. favicon 생성.
