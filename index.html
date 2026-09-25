@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sandy Butter · 샌디버터 | 오븐 버터 디저트</title>
+<meta name="description" content="매일 오븐에 구운 버터 디저트, 샌디버터. 에그타르트·과일샌드·두바이 김밥 주문과 소식을 한 곳에서 만나보세요." />
+<meta name="theme-color" content="#F37828" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sandy Butter · 샌디버터" />
+<meta property="og:description" content="매일 오븐에 구운 버터 디저트. 주문·문의·소식을 한 곳에서." />
+<meta property="og:image" content="sb-eggtart.webp" />
+<meta property="og:locale" content="ko_KR" />
+
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png" />
+
+<!-- JSON-LD · canonical/og:url/절대 image는 도메인 확정 후 추가 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sandy Butter",
+  "alternateName": "샌디버터",
+  "description": "매일 오븐에 구운 수제 버터 디저트 (에그타르트·과일샌드·두바이 김밥).",
+  "logo": "sb-badge.webp",
+  "sameAs": [
+    "https://www.instagram.com/sandybutter_/",
+    "https://pf.kakao.com/_vpXxkn",
+    "https://oven-sandybutter.web.app/"
+  ]
+}
+</script>
+
+<!-- Fonts (시안: CDN · 납품 시 self-host 예정) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<style>
+/* ============================================================
+   Sandy Butter (샌디버터) — 링크 허브 · 미국 팝아트 / 캐릭터 프랜차이즈
+   키컬러: 주황 #F37828 · 코믹 블랙 아웃라인 · 크림 배경
+   ============================================================ */
+:root{
+  --orange:      #F37828;   /* 키 주황 (배지) */
+  --orange-deep: #E45B12;   /* 버튼 hover / Butter */
+  --orange-text: #AE3F08;   /* 크림 위 주황 텍스트 (AA 4.88) */
+  --gold:        #F1A037;   /* Sandy 골드 */
+  --cream:       #F6E6CF;   /* 배경 */
+  --cream-deep:  #F1DABA;
+  --paper:       #FFFDF7;   /* 카드/버튼 화이트 */
+  --ink:         #1C140F;   /* 코믹 블랙 (아웃라인·본문) */
+  --pink:        #F27E9D;   /* 캐릭터 리본 액센트 */
+  --blue:        #5B9BD5;   /* 캐릭터 모자 액센트 */
+  --line:        3px;       /* 팝 아웃라인 두께 */
+  --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --pop:  "Bagel Fat One", var(--sans);
+  --shadow: 5px 5px 0 var(--ink);
+  --shadow-sm: 3px 3px 0 var(--ink);
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; font-family:var(--sans); color:var(--ink);
+  background:var(--cream);
+  background-image:radial-gradient(var(--cream-deep) 1.6px, transparent 1.7px);
+  background-size:18px 18px;
+  line-height:1.6; letter-spacing:-.01em;
+  -webkit-font-smoothing:antialiased;
+  min-height:100dvh;
+  display:flex; justify-content:center;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+
+.wrap{ width:100%; max-width:480px; padding:34px 20px 40px; text-align:center; }
+
+/* ---------- hero ---------- */
+.badge{
+  width:132px; height:132px; margin:0 auto 18px; border-radius:50%;
+  border:var(--line) solid var(--ink); box-shadow:var(--shadow);
+  overflow:hidden; background:var(--orange);
+  animation:pop-in .6s cubic-bezier(.34,1.56,.64,1) both;
+}
+.badge img{ width:100%; height:100%; object-fit:cover; }
+.hero-logo{ width:min(86%,340px); margin:0 auto 4px; }
+.tagline{ font-size:1.02rem; color:var(--ink); margin:.2em auto 1.5rem; max-width:24ch; font-weight:600; word-break:keep-all; }
+.tagline b{ color:var(--orange-text); font-weight:800; }
+.tagline .pop{ font-family:var(--pop); font-weight:400; color:var(--orange-text); font-size:1.1em; }
+
+/* ---------- showcase ---------- */
+.shots{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 1.9rem; }
+.shots figure{ margin:0; border:var(--line) solid var(--ink); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-sm); background:var(--paper); transform:rotate(var(--r,0deg)); }
+.shots figure:nth-child(1){ --r:-2.5deg; } .shots figure:nth-child(3){ --r:2.5deg; }
+.shots img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+
+/* ---------- link buttons ---------- */
+.links{ display:flex; flex-direction:column; gap:14px; }
+.lnk{
+  position:relative; display:flex; align-items:center; gap:14px;
+  background:var(--paper); border:var(--line) solid var(--ink); border-radius:20px;
+  padding:15px 18px; text-align:left; box-shadow:var(--shadow);
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.lnk:hover{ transform:translate(2px,2px); box-shadow:var(--shadow-sm); }
+.lnk:active{ transform:translate(5px,5px); box-shadow:0 0 0 var(--ink); }
+.lnk:focus-visible{ outline:3px solid var(--orange-deep); outline-offset:3px; }
+.lnk.primary{ background:var(--orange); }
+.lnk .ic{
+  flex:0 0 46px; width:46px; height:46px; border-radius:12px;
+  display:grid; place-items:center; border:2.5px solid var(--ink); background:var(--cream);
+}
+.lnk.primary .ic{ background:var(--paper); }
+.lnk .ic svg{ width:24px; height:24px; }
+.lnk .tx{ flex:1; min-width:0; }
+.lnk .tx b{ font-family:var(--pop); font-weight:400; font-size:1.24rem; display:block; line-height:1.1; letter-spacing:.01em; }
+.lnk .tx span{ font-size:.83rem; color:var(--ink); opacity:.72; font-weight:500; }
+.lnk .arw{ flex:0 0 auto; opacity:.55; }
+.lnk .arw svg{ width:20px; height:20px; }
+
+/* ---------- footer ---------- */
+.foot{ margin-top:2.2rem; font-size:.82rem; color:var(--ink); opacity:.65; }
+.foot b{ font-family:var(--pop); font-weight:400; opacity:1; color:var(--orange-text); font-size:1rem; }
+
+/* ---------- motion ---------- */
+@keyframes pop-in{ 0%{ transform:scale(0) rotate(-12deg); } 100%{ transform:scale(1) rotate(0); } }
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s cubic-bezier(.34,1.56,.64,1); }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){ .badge{ animation:none; } .reveal{ opacity:1; transform:none; } }
+
+@media (min-width:520px){ .wrap{ padding-top:48px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <div class="badge"><img src="sb-badge.webp" alt="Sandy Butter 주황 로고 배지" width="132" height="132" /></div>
+
+  <img class="hero-logo reveal" src="sb-logo.webp" alt="샌디버터 캐릭터 로고 — 버터 소녀와 쿠키 소년" width="340" height="425" />
+
+  <p class="tagline reveal">매일 오븐에 구운 <b>버터 디저트</b><br /><span class="pop">에그타르트 · 과일샌드 · 두바이 김밥</span></p>
+
+  <div class="shots reveal">
+    <figure><img loading="lazy" src="sb-eggtart.webp" alt="갓 구운 에그타르트" width="300" height="300" /></figure>
+    <figure><img loading="lazy" src="sb-fruitsand.webp" alt="딸기·샤인머스캣 과일 샌드" width="300" height="300" /></figure>
+    <figure><img loading="lazy" src="sb-cake.webp" alt="딸기 생크림 케이크" width="300" height="300" /></figure>
+  </div>
+
+  <nav class="links" aria-label="샌디버터 채널">
+    <a class="lnk primary reveal" href="https://oven-sandybutter.web.app/" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1C140F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2.5"/><path d="M3 9h18"/><path d="M7 14h10"/><circle cx="7" cy="6.5" r=".6" fill="#1C140F"/><circle cx="10" cy="6.5" r=".6" fill="#1C140F"/></svg>
+      </span>
+      <span class="tx"><b>오븐 주문하기</b><span>지금 주문 가능한 메뉴 보기</span></span>
+      <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1C140F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="lnk reveal" href="https://pf.kakao.com/_vpXxkn" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1C140F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4C7 4 3 7.2 3 11.1c0 2.5 1.7 4.7 4.2 5.9L6.4 20l3.3-1.9c.7.1 1.5.2 2.3.2 5 0 9-3.2 9-7.2S17 4 12 4Z"/></svg>
+      </span>
+      <span class="tx"><b>카카오톡 채널</b><span>문의 · 예약 · 비즈니스 제안</span></span>
+      <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1C140F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="lnk reveal" href="https://www.instagram.com/sandybutter_/" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1C140F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="#1C140F" stroke="none"/></svg>
+      </span>
+      <span class="tx"><b>인스타그램</b><span>@sandybutter_ · 새 메뉴 소식</span></span>
+      <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1C140F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+  </nav>
+
+  <p class="foot"><b>Sandy Butter</b><br />@sandybutter_ · 매일 오븐에서 갓 구운 버터 디저트</p>
+
+</main>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.reveal'));
+  var show=function(el){ el.classList.add('in'); };
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } }); }, {threshold:.06});
+    items.forEach(function(el,i){ el.style.transitionDelay=(i*0.06)+'s'; io.observe(el); });
+    setTimeout(function(){ items.forEach(show); }, 2000);
+  } else { items.forEach(show); }
+})();
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
